@@ -1,0 +1,1183 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Khalid Resume</title>
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
+        integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <style type="text/css">
+        body {
+            margin: 0px;
+            font-family: sans-serif;
+            font-size: 30px;
+        }
+
+        body::-webkit-scrollbar {
+            display: none;
+        }
+
+
+        /* Body Header */
+
+        #body-header {
+            height: 65vh;
+            opacity: 0.8;
+            background-image: url(https://ninjasfiles.s3.amazonaws.com/asset_0000000000000020_1549743985_macbook_mouse.jpg);
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            padding-top: 1.2rem;
+        }
+
+
+
+        /* Horizontal Lists */
+
+        .bars {
+            color: white;
+            margin: 0;
+            margin-right: 5%;
+            display: none;
+        }
+
+        .bars i {
+            font-size: 2rem;
+        }
+
+        .dropdown-list {
+            margin: 0;
+            display: none;
+            background-color: #828470;
+            box-shadow: 0px 4px 8px 1px #535547;
+        }
+
+        .dropdown-list ul {
+            margin: 0.2rem 0.2rem;
+            text-align: left;
+            padding: 0px 0.8rem;
+        }
+
+        .dropdown-menu:hover .dropdown-list {
+            display: block;
+            position: absolute;
+            right: 3%;
+        }
+
+        .dropdown-list li {
+            margin: 0.4rem 0px;
+        }
+
+        .no-list-style {
+            list-style: none;
+        }
+
+        .no-list-style li {
+            font-weight: 100;
+            font-size: 0.9rem;
+        }
+
+        .no-list-style li a {
+            list-style: none;
+            color: white;
+            text-decoration: none;
+        }
+
+        .horizontal-list {
+            padding-left: 0px;
+            margin: 0px;
+        }
+
+        .horizontal-list li {
+            display: inline-block;
+            margin: 0px 8px 8px 0px;
+        }
+
+
+        .nav-menu li a {
+            transition: color 0.5s, border-bottom 4s;
+        }
+
+        .nav-menu li a:hover {
+            color: lightgrey;
+            border-bottom: 1px solid black;
+        }
+
+
+        /* Name and Social Icons*/
+
+        #name-social-container {
+            margin-top: 20vh;
+        }
+
+        #my-name {
+            font-size: 3rem;
+            letter-spacing: 0.1rem;
+            color: white;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .social-icons li a i {
+            padding: 10px;
+            font-size: 1rem;
+            border-radius: 50%;
+        }
+
+        .social-icons li a i:hover {
+            box-shadow: 0px 0px 6px 4px rgba(230, 196, 196, 0.3);
+        }
+
+
+
+        /*Section Classes*/
+
+        section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-bottom: 20px;
+        }
+
+        section:nth-child(2n) {
+            background-color: #9e9b9b29;
+        }
+
+        section:nth-child(2n + 1) {
+            background-color: white;
+        }
+
+        .section-heading {
+            width: auto;
+            padding: 20px 10px 10px;
+            font-weight: 400;
+        }
+
+        .section-heading span {
+            font-size: 40px;
+            color: #2857a4;
+            display: inline-block;
+            padding-top: 10px;
+            margin-right: 0.5rem;
+        }
+
+
+
+        /*About Section*/
+
+        #about {
+            height: auto;
+            width: 100%;
+            position: relative;
+            margin-bottom: 30px;
+        }
+
+        #my-image {
+            height: 12rem;
+            width: 12rem;
+            margin: auto;
+            margin-top: -17vh;
+        }
+
+        #my-image img {
+            height: 100%;
+            width: 100%;
+            border-radius: 50%;
+            border: 3px solid white;
+            box-shadow: 1px 1px 10px 2px lightgrey;
+        }
+
+        #about-para {
+            padding: 10px;
+            width: 70%;
+            text-align: justify;
+            color: grey;
+            line-height: 28px;
+            font-size: 1.1rem;
+            margin: auto;
+        }
+
+
+
+        /*Skills Section*/
+
+        .skills-display {
+            width: 75%;
+            padding: 10px;
+            margin-bottom: 30px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+        }
+
+        .skill-progress {
+            width: 11rem;
+            height: 2.2rem;
+            background-color: lightgrey;
+            border-radius: 1rem;
+            box-shadow: 1px 1px 2px 1px #b9b9b9 inset;
+            margin: 25px;
+            overflow: hidden;
+        }
+
+        .skill-progress>div {
+            border-radius: 20px 0px 0px 20px;
+            box-shadow: 1px 1px 5px 2px #989882;
+        }
+
+        .skill-name span {
+            color: white;
+            font-size: 1rem;
+            margin-left: 10px;
+            vertical-align: middle;
+        }
+
+
+
+        /* Work Experience */
+
+        .timeline {
+            position: relative;
+            width: 75%;
+        }
+
+        .timeline-box {
+            padding: 5px;
+            width: 40%;
+            min-height: 150px;
+            position: relative;
+            left: 5%;
+            text-align: right;
+        }
+
+        .timeline-box::after {
+            content: '';
+            position: absolute;
+            width: 15px;
+            height: 15px;
+            background-color: lightgrey;
+            top: 25%;
+            border-radius: 50%;
+            z-index: 1;
+        }
+
+        .timeline-box:nth-child(2n) {
+            left: 53%;
+        }
+
+        .timeline-box:nth-child(2n+1)::after {
+            right: -11.8%;
+        }
+
+        .timeline-box:nth-child(2n)::after {
+            left: -9%;
+        }
+
+        .timeline-container {
+            padding: 8px;
+        }
+
+        .timeline-logo {
+            position: absolute;
+            width: 50px;
+            overflow: hidden;
+        }
+
+        .timeline-logo>img {
+            width: 100%;
+        }
+
+        #timeline-divider {
+            position: absolute;
+            width: 0;
+            top: 10%;
+            left: 50%;
+            border: 1px dashed #0096fa6b;
+            height: 66%;
+            color: #433E3F;
+        }
+
+        #timeline-divider .timeline-traveller {
+            position: sticky;
+            top: 135px;
+            z-index: 2;
+        }
+
+        #timeline-divider i {
+            transform: rotate(90deg);
+            margin-top: -35px;
+            display: block;
+            color: #2857a4;
+        }
+
+        .experience-designation {
+            font-size: 1.4rem;
+        }
+
+        .experience-company-name {
+            margin: 5px 0 0;
+            color: #eb822d;
+            font-weight: 400;
+            font-size: 1.2rem;
+        }
+
+        .experience-duration {
+            color: #9e9b9b;
+            font-weight: 100;
+            color: grey;
+            font-size: 1rem;
+        }
+
+        .experience-description {
+            font-size: 14px;
+            padding: 2px;
+            color: grey;
+            line-height: 20px;
+        }
+
+
+
+
+
+
+        /* Portfolio Section */
+
+        #portfolio-container {
+            box-sizing: border-box;
+            display: flex;
+            flex-wrap: wrap;
+            padding: 0 50px;
+            margin-bottom: 20px;
+            justify-content: space-around;
+        }
+
+        .portfolio-image-container {
+            max-width: 300px;
+            overflow: hidden;
+            margin: 30px;
+            background-size: cover;
+            background-repeat: no-repeat;
+            position: relative;
+        }
+
+        .portfolio-image-container img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .portfolio-details {
+            transition: all 0.5s ease-in-out;
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            color: transparent;
+            text-align: center;
+            padding: 10px;
+        }
+
+        .portfolio-image-container:hover {
+            box-shadow: 0 0 20px #74ADC8;
+        }
+
+        .portfolio-image-container:hover .portfolio-details {
+            background-color: #80808078;
+            color: white;
+        }
+
+
+
+        /* Contact Form */
+
+        #contact {
+            background-color: #0abcf9;
+            background-image: linear-gradient(50deg, #2857a4 0%, #403066 74%);
+            color: white;
+            padding-bottom: 40px;
+        }
+
+        #contact h1,
+        #contact h1 span {
+            color: white;
+        }
+
+        #contact-form {
+            margin-left: 20%;
+        }
+
+        #contact-container {
+            display: flex;
+        }
+
+        #my-details-container {
+            width: 35%;
+            margin-left: 6%;
+        }
+
+        #my-details-container h3 {
+            color: white;
+            font-weight: 550;
+            font-size: 1.2rem;
+        }
+
+        #contact-form-container {
+            width: 50%;
+        }
+
+        #my-details-container p {
+            color: #d9dcdd;
+            font-size: 0.9rem;
+        }
+
+        .my-details-info-container {
+            margin-bottom: 20px;
+            color: #d9dcdd;
+            font-size: 1rem;
+        }
+
+        .my-details-info-container span {
+            margin-left: 0.4rem;
+        }
+
+        .my-details-info-container i {
+            color: white;
+        }
+
+        .my-details-icon {
+            width: 1rem;
+            height: 1rem;
+            vertical-align: bottom;
+            margin-right: 0.5rem;
+        }
+
+
+        #contact-form input,
+        textarea {
+            max-width: 90%;
+            margin: 15px;
+            padding: 4px 10px;
+            border: 0px solid transparent;
+            border-bottom: 2px solid white;
+            color: #d9dcdd;
+            background: transparent;
+            width: 90%;
+            line-height: 1.6;
+            font-size: 1.05rem;
+        }
+
+        #contact-form button[type="submit"] {
+            background: transparent;
+            font-size: 0.95rem;
+            border: 2px solid white;
+            margin-top: 5%;
+            margin-left: 35%;
+            border-radius: 2px;
+            color: white;
+            font-family: sans-serif;
+            font-weight: 700;
+            letter-spacing: 0.046875em;
+            line-height: 1;
+            padding: 0.8em 0.8em 0.78em;
+            text-transform: uppercase;
+        }
+
+        #contact-form button:hover {
+            background: white;
+            color: #13386fe0;
+        }
+
+        #contact .social-icons li a i {
+            font-size: 1.2rem;
+            margin: 40px 10px 10px;
+            padding: 10px 14px 20px 10px;
+
+        }
+
+        input:focus,
+        select:focus,
+        textarea:focus,
+        button:focus {
+            outline: none;
+        }
+
+        /* Common Text Align Classes */
+
+        .text-right {
+            text-align: right;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .text-justify {
+            text-align: justify;
+        }
+
+        /* Common Margin Classes */
+
+        .m0 {
+            margin: 0;
+        }
+
+        .mb75px {
+            margin-bottom: 75px;
+        }
+
+        .mb50px {
+            margin-bottom: 50px;
+        }
+
+
+
+        /*common color classes */
+
+        .text-highlight {
+            color: #2857a4;
+            font-weight: 600;
+
+        }
+
+
+        /* setting background-color */
+
+        .m-blue {
+            color: #2857a4;
+        }
+
+        .mb-blue {
+            background-color: #2857a4;
+        }
+
+        .mb-orange {
+            background-color: #ec4d1c;
+        }
+
+        .mb-teal {
+            background-color: #0b8176;
+        }
+
+        .mb-light-purple {
+            background-color: #93738c;
+        }
+
+
+
+        /*Percentage Classes */
+
+        .eighty-five-percent {
+            height: inherit;
+            width: 85%;
+        }
+
+        .eighty-percent {
+            height: inherit;
+            width: 80%;
+        }
+
+        .fifty-percent {
+            height: inherit;
+            width: 50%;
+        }
+
+
+        @media only screen and (max-width: 572px) {
+
+            .timeline-box {
+                width: 100%;
+                left: 10% !important;
+            }
+
+            .bars {
+                display: block;
+            }
+
+
+            .nav-menu {
+                display: none;
+            }
+        }
+
+
+
+        @media only screen and (max-width: 768px) {
+
+
+            .timeline-box {
+                width: 90%;
+                left: 10% !important;
+            }
+
+            .timeline-box::after {
+                left: -9.3% !important;
+            }
+
+            #timeline-divider {
+                top: 10%;
+                left: 2%;
+            }
+
+            #contact-form {
+                margin-left: 0%;
+            }
+
+            #contact-container {
+                flex-wrap: wrap;
+            }
+
+            #my-details-container {
+                width: 80%;
+                margin: 10%;
+            }
+
+            #contact-form-container {
+                width: 80%;
+                margin: 10%;
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+
+    <header id="body-header">
+        <nav>
+
+            <div class="dropdown-menu text-right">
+                <div class="bars">
+                    <i class="fas fa-bars"></i>
+                </div>
+                <div class="dropdown-list nav-menu">
+                    <ul class="no-list-style">
+                        <li>
+                            <a href="#"> Home </a>
+                        </li>
+                        <li>
+                            <a href="#about"> About </a>
+                        </li>
+                        <li>
+                            <a href="#skills"> Skills </a>
+                        </li>
+                        <li>
+                            <a href="#experience">Experience</a>
+                        </li>
+                        <li>
+                            <a href="#education">Education</a>
+                        </li>
+                        <li>
+                            <a href="#portfolio">Portfolio</a>
+                        </li>
+                        <li>
+                            <a href="#contact">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <ul class="no-list-style horizontal-list text-center nav-menu">
+                <li>
+                    <a href="#"> Home </a>
+                </li>
+                <li>
+                    <a href="#about"> About </a>
+                </li>
+                <li>
+                    <a href="#skills"> Skills </a>
+                </li>
+                <li>
+                    <a href="#experience">Experience</a>
+                </li>
+                <li>
+                    <a href="#education">Education</a>
+                </li>
+                <li>
+                    <a href="#portfolio">Portfolio</a>
+                </li>
+                <li>
+                    <a href="#contact">Contact</a>
+                </li>
+            </ul>
+
+        </nav>
+
+        <div id="name-social-container">
+            <div class="text-center">
+                <h1 id="my-name">Khalid Lad</h1>
+            </div>
+            <div>
+                <ul class="no-list-style horizontal-list text-center social-icons">
+                    <li>
+                        <a href="https://www.linkedin.com/in/khalid-lad " target="_blank">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://stackoverflow.com/users/21256259/khalid-lad" target="_blank">
+                            <i class="fab fa-stack-overflow"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://twitter.com/khalid_lad" target="_blank">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.facebook.com/khalidlad09" target="_blank">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.quora.com/profile/Khalid-Lad" target="_blank">
+                            <i class="fab fa-quora"></i>
+                        </a>
+                    </li>
+                </ul>
+
+            </div>
+
+        </div>
+
+    </header>
+    <main>
+
+        <section id="about">
+            <div id="my-image">
+                <img src="my-image.jpg">
+            </div>
+
+            <div id="about-para">
+
+                <p>
+                    Motivated and entry level professional seeking the opportunity to utilise the knowledge of <span
+                        class="text-highlight">Web development</span> in front-end as well as back-end development.
+                    Committed to achieving employer's objectives, skilled at creating and identifying client's needs for
+                    <span class="text-highlight">web designing</span>. Proficient in <span
+                        class="text-highlight">Python, HTML, CSS, Javascript, Node.js, React.js etc.</span> Excellent
+                    teamwork with interpersonal and communication skills. I always try to learn new skills to keep pace
+                    with the changing technology landscape. I have a passion for problem-solving and enjoy finding
+                    innovative solutions to complex technical challenges.
+
+                </p>
+
+            </div>
+
+        </section>
+
+
+
+        <section id="skills">
+            <h1 class="section-heading mb75px ">
+                <span>
+                    <i class="fas fa-chalkboard-teacher"></i>
+                </span>
+                <span> SKILLS </span>
+            </h1>
+
+            <div id="skills-container" class="skills-display">
+
+                <div class="skill-progress">
+                    <div class="fifty-percent mb-blue" data-bar-width="50">
+                        <div class="skill-name">
+                            <span> Python </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="skill-progress">
+                    <div class="eighty-five-percent mb-orange" data-bar-width="85">
+                        <div class="skill-name">
+                            <span> HTML </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="skill-progress">
+                    <div class="eighty-percent mb-light-purple" data-bar-width="85">
+                        <div class="skill-name">
+                            <span> CSS </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="skill-progress">
+                    <div class="fifty-percent mb-teal" data-bar-width="50">
+                        <div class="skill-name">
+                            <span> Javascript </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="skill-progress">
+                    <div class="fifty-percent mb-blue" data-bar-width="50">
+                        <div class="skill-name">
+                            <span> NodeJs </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="skill-progress">
+                    <div class="eighty-percent mb-light-purple" data-bar-width="80">
+                        <div class="skill-name">
+                            <span> ReactJs </span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+        <section id="experience">
+
+            <h1 class="section-heading mb75px">
+                <span>
+                    <i class="fas fa-briefcase"></i>
+                </span>
+                <span> Work Experience </span>
+            </h1>
+
+            <div class="timeline">
+
+                <div class="timeline-box ">
+                    <div class="timeline-container">
+                        <div class="timeline-logo">
+                            <img src="samlogo.webp">
+                        </div>
+                        <h3 class="experience-designation  m0 m-blue"> Business Development<br> Head </h3>
+                        <h4 class="experience-company-name"> Samruddhi Enterprises </h4>
+                        <h5 class="experience-duration m0"> Feb 2020 - Present </h5>
+
+                        <p class="experience-description text-justify"> Business Development Head sales, marketing, team
+                            building and company administration. Creating digital presence and digital marketing through
+                            campaigning and observing custommer behaviours. Formulating sales policy and marketing
+                            strategies for organization as well as for all the employees. New and innovative products
+                            and client’s assessment which can provide better solution for customers.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="timeline-box right ">
+                    <div class="timeline-container">
+                        <div class="timeline-logo">
+                            <img src="rklogo.jpeg">
+                        </div>
+                        <h3 class="experience-designation  m0 m-blue"> Production Incharge </h3>
+                        <h4 class="experience-company-name"> RK Industries </h4>
+                        <h5 class="experience-duration m0"> Nov 2017 - Dec 2018 </h5>
+                        <p class="experience-description text-justify"> Worked as Production in charge to lead team with
+                            strong communication skills to coordinate with staff, management, vendors and customers to
+                            achieve maximum results. Establish and reinforce maintenance and safety procedures, to
+                            maintain machines and equipment in good condition.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="timeline-box left ">
+                    <div class="timeline-container">
+                        <div class="timeline-logo">
+                            <img src="meltlogo.jpeg">
+                        </div>
+                        <h3 class="experience-designation m0 m-blue"> Internship Engineer</h3>
+                        <h4 class="experience-company-name"> New Melting Center Pvt Ltd</h4>
+                        <h5 class="experience-duration m0"> June 2017 - Oct 2017 </h5>
+
+                        <p class="experience-description text-justify">Completed internship as Quality Engineer where I
+                            did statistical analysis of daily and monthly production using OEE method. Worked with
+                            Business ERP of Comserve Technologies PVT Ltd in BWays ERP. Process validation and
+                            development of documents such as Process plan and Quality plan of the products for ERP
+                            systems. </p>
+                    </div>
+                </div>
+
+                <div id="timeline-divider">
+                    <div class="timeline-traveller">
+                        <div>
+                            <i class="fas fa-plane"></i>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+        <section id="education">
+
+            <h1 class="section-heading mb75px">
+                <span>
+                    <i class="fas fa-graduation-cap"></i>
+                </span>
+                <span> Education </span>
+            </h1>
+
+            <div class="timeline">
+
+                <div class="timeline-box left ">
+                    <div class="timeline-container">
+                        <div class="timeline-logo">
+                            <img
+                                src="https://ninjasfiles.s3.amazonaws.com/asset_0000000000000030_1550710829_ninjasicon.png">
+                        </div>
+                        <h3 class="experience-designation  m0 m-blue"> Fullstack Web Developer </h3>
+                        <h4 class="experience-company-name "> Coding Ninjas </h4>
+                        <h5 class="experience-duration m0"> Sept 2022 - June 2023 </h5>
+
+                        <p class="experience-description text-justify"> Completing Career Camp Web Developer course with
+                            Python language from Coding Ninjas where I learnt important skills in the IT sector from DSA
+                            in Python to backend development in NodeJs and from HTML, CSS, JavaScript to Database
+                            management. </p>
+                    </div>
+                </div>
+
+                <div class="timeline-box right ">
+                    <div class="timeline-container">
+                        <div class="timeline-logo">
+                            <img src="https://www.iaspaper.net/wp-content/uploads/2017/09/logo-1.jpg">
+                        </div>
+                        <h3 class="experience-designation  m0 m-blue"> Bachelor of Engineering <br> (Mechanical) </h3>
+                        <h4 class="experience-company-name "> Shivaji University </h4>
+                        <h5 class="experience-duration m0"> Aug 2013 - June 2017 </h5>
+                        <p class="experience-description text-justify"> Completed Bachelor of Mechanical Engineering in
+                            year 2017 with 59.69% from Genesis Institute of Technology affiliated to Shivaji University,
+                            Kolhapur. Here I impoved my Engineering skills as well as communication and team working
+                            skills.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-box left ">
+                    <div class="timeline-container">
+                        <div class="timeline-logo">
+                            <img src="https://img.jagranjosh.com/images/2022/June/1362022/AMGOI.jpg">
+                        </div>
+                        <h3 class="experience-designation  m0 m-blue"> Diploma in Engineering<br> (Mechanical) </h3>
+                        <h4 class="experience-company-name "> Ashokrao Mane Polytechnic </h4>
+                        <h5 class="experience-duration m0"> Aug 2010 - June 2013 </h5>
+
+                        <p class="experience-description text-justify"> Completed Diploma in Mechanical Engineering from
+                            Ashokrao Mane Polytechnic, Vathar in year 2013 with 65.67%. Due to my interests in
+                            automobile sector I chose this course where I learnt many basics of engineering and
+                            technology.</p>
+                    </div>
+                </div>
+
+                <div id="timeline-divider">
+                    <div class="timeline-traveller">
+                        <div>
+                            <i class="fas fa-car-side"></i>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+        <section id="portfolio">
+            <h1 class="section-heading mb75px">
+                <span>
+                    <i class="fas fa-th-list"></i>
+                </span>
+                <span> Portfolio </span>
+            </h1>
+
+            <div id="portfolio-container">
+
+                <div class="portfolio-image-container">
+                    <img src="https://ninjasfiles.s3.amazonaws.com/asset_0000000000000025_1550237330_codezen_2.png">
+                    <div class="portfolio-details">
+                        <p>
+                            Write here basic details about the project.
+                        </p>
+                    </div>
+
+                </div>
+                <div class="portfolio-image-container">
+                    <img src="https://ninjasfiles.s3.amazonaws.com/asset_0000000000000025_1550237330_codezen_2.png">
+                    <div class="portfolio-details">
+                        <p>
+                            Write here basic details about the project.
+                        </p>
+                    </div>
+
+                </div>
+                <div class="portfolio-image-container">
+                    <img src="https://ninjasfiles.s3.amazonaws.com/asset_0000000000000025_1550237330_codezen_2.png">
+                    <div class="portfolio-details">
+                        <p>
+                            Write here basic details about the project.
+                        </p>
+                    </div>
+
+                </div>
+                <div class="portfolio-image-container">
+                    <img src="https://ninjasfiles.s3.amazonaws.com/asset_0000000000000024_1550237299_codezen.png">
+                    <div class="portfolio-details">
+                        <p>
+                            Write here basic details about the project.
+                        </p>
+                    </div>
+
+                </div>
+                <div class="portfolio-image-container">
+                    <img src="https://ninjasfiles.s3.amazonaws.com/asset_0000000000000024_1550237299_codezen.png">
+                    <div class="portfolio-details">
+                        <p>
+                            Write here basic details about the project.
+                        </p>
+                    </div>
+
+                </div>
+                <div class="portfolio-image-container">
+                    <img src="https://ninjasfiles.s3.amazonaws.com/asset_0000000000000024_1550237299_codezen.png">
+                    <div class="portfolio-details">
+                        <p>
+                            Write here basic details about the project.
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+        <section id="contact">
+            <h1 class="section-heading mb50px">
+                <span>
+                    <i class="far fa-address-card"></i>
+                </span>
+                <span> Contact </span>
+            </h1>
+            <div id="contact-container">
+
+                <div id="contact-form-container">
+                    <form id="contact-form">
+                        <input id="input-name" name="name" type="text" placeholder="Your Name">
+                        <input id="input-email" name="input-email" type="text" required placeholder="Your Email">
+                        <textarea id="input-message" name="input-message" rows="2" cols=40
+                            placeholder="Message"></textarea>
+                        <button class="sub-btn" type="submit">SEND MESSAGE</button>
+                    </form>
+                </div>
+                <div id="my-details-container">
+
+                    <h3> Get In touch </h3>
+                    <p> I am excited to connect with and learn from like-minded professionals in the industry. Please
+                        feel free to reach out to me if you would like to discuss potential opportunities or collaborate
+                        on a project. </p>
+
+                    <h3> My Address </h3>
+                    <div class="my-details-info-container">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Kolhapur, Maharashtra, India</span>
+                    </div>
+                    <div class="my-details-info-container">
+                        <i class="fas fa-mobile-alt"></i>
+                        <span>+91 9011786979</span>
+                    </div>
+                    <div class="my-details-info-container">
+                        <i class="far fa-envelope"></i>
+                        <span>khalidlad888@gmail.com</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center social-icons">
+
+                <ul class="no-list-style horizontal-list">
+
+                    <li>
+                        <a href="https://www.linkedin.com/in/khalid-lad" target="_blank">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="https://stackoverflow.com/users/21256259/khalid-lad" target="_blank">
+                            <i class="fab fa-stack-overflow"></i>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="https://twitter.com/khalid_lad" target="_blank">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="https://www.facebook.com/khalidlad09" target="_blank">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="https://www.quora.com/profile/Khalid-Lad" target="_blank">
+                            <i class="fab fa-quora"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+    </main>
+    <script>
+        var navMenuAnchorTags = document.querySelectorAll('.nav-menu a');
+
+        for (var i = 0; i < navMenuAnchorTags.length; i++) {
+            navMenuAnchorTags[i].addEventListener('click', function (event) {
+                event.preventDefault();
+                var targetSectionId = this.textContent.trim().toLowerCase();
+                var targetSection = document.getElementById(targetSectionId);
+                console.log(targetSection)
+                var interval = setInterval(function () {
+                    var targetSectionCoordinates = targetSection.getBoundingClientRect();
+                    if (targetSectionCoordinates.top <= 0) {
+                        clearInterval(interval);
+                        return;
+                    }
+                    window.scrollBy(0, 50);
+                }, 20);
+            });
+        }
+
+
+        var progressBars = document.querySelectorAll('.skill-progress > div');
+        var skillContainer = document.getElementById('skills-container');
+        window.addEventListener('scroll', checkScroll);
+        var animationDone = false;
+
+        function initialiseBars() {
+            for (let bar of progressBars) {
+                bar.style.width = 0 + '%';
+            }
+        }
+
+        initialiseBars();
+
+        function fillBars() {
+            for (let bar of progressBars) {
+                let targetWidth = bar.getAttribute('data-bar-width');
+                let currentWidth = 0;
+                let interval = setInterval(function () {
+                    if (currentWidth > targetWidth) {
+                        clearInterval(interval);
+                        return;
+                    }
+                    currentWidth++
+                    bar.style.width = currentWidth + '%';
+                }, 3)
+            }
+        }
+
+
+        function checkScroll() {
+            var coordinates = skillContainer.getBoundingClientRect();
+            if (!animationDone && coordinates.top < window.innerHeight) {
+                animationDone = true;
+                console.log('skill-container-visible')
+                fillBars();
+            } else if (coordinates.top > window.innerHeight) {
+                animationDone = false;
+                initialiseBars();
+            }
+        }
+    </script>
+</body>
+
+</html>
